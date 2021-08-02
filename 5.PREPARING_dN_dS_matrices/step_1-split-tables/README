@@ -1,0 +1,19 @@
+MAKE SURE that result files have only , as separators! because, when you use <paste file_1 file_2> it splits files with a tab!!!
+
+use the below code to substitute tabs with commas
+
+for i in results-*max_llh-tree_*; do sed -i 's/\t/,/g' $i; done
+
+
+in this folder run:
+./script-collect-per-LCA.sh
+
+then in each of 
+tables_for_all_6222_genes/part_1/dN/
+tables_for_all_6222_genes/part_1/dS/
+tables_for_all_6222_genes/part_2/dN/
+tables_for_all_6222_genes/part_2/dS/
+
+
+run 
+python script-prepare-split-files.py
